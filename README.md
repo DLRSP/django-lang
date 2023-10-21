@@ -73,3 +73,8 @@ python manage.py runserver
 ```
 
 Now browser the app @ http://127.0.0.1:8000
+
+## References
+
+- [brainstorm.it](https://brainstorm.it/snippets/django-language-switching/) - Language's switching
+- [hakibenita.com](https://hakibenita.com/django-multi-language-site-hreflang) - Url's translation for "hreflang" html's attributes
