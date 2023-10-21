@@ -1,7 +1,7 @@
-from django import template
-from django.utils import translation
-from django.conf import settings
 import flag
+from django import template
+from django.conf import settings
+from django.utils import translation
 
 register = template.Library()
 
@@ -45,7 +45,7 @@ def get_language_info_list_ex(request):
             return translation.get_language_info(str(language))
 
     flag_map = {
-        'en': 'gb',
+        "en": "gb",
     }
 
     # Es: 'es'
@@ -54,14 +54,15 @@ def get_language_info_list_ex(request):
     # Es: [('en', 'Inglés'), ('it', 'Italiano'), ('es', 'Español')]
     # languages = [(k, translation.gettext(v)) for k, v in settings.LANGUAGES]
     for language in settings.LANGUAGES:
-        # Es: {'bidi': False, 'code': 'es', 'name': 'Spanish', 'name_local': 'español', 'name_translated': 'Español'}
+        # Es: {'bidi': False, 'code': 'es', 'name': 'Spanish',
+        #      'name_local': 'español', 'name_translated': 'Español'}
         info = get_language_info(language)
 
-        code = info['code']
-        info['is_current'] = (code == current_language)
+        code = info["code"]
+        info["is_current"] = code == current_language
 
         # This requires emoji-country-flag Python package
-        info['flag'] = flag.flag(flag_map.get(code, code))
+        info["flag"] = flag.flag(flag_map.get(code, code))
         data.append(info)
 
     return data

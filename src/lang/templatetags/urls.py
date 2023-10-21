@@ -1,6 +1,6 @@
-from typing import Optional, Any, Dict
-from django import template
-from django import urls
+from typing import Any, Dict, Optional
+
+from django import template, urls
 
 register = template.Library()
 
@@ -12,5 +12,5 @@ def translate_url(context: Dict[str, Any], language: Optional[str]) -> str:
     Usage:
         {% translate_url 'en' %}
     """
-    url = context['request'].build_absolute_uri()
+    url = context["request"].build_absolute_uri()
     return urls.translate_url(url, language)
