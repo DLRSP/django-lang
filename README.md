@@ -20,49 +20,63 @@
 
 ## Setup
 1. Install from **pip**:
-```shell
-pip install django-lang
-```
+    ```shell
+    pip install django-lang
+    ```
 2. Modify `settings.py` by adding the app to `INSTALLED_APPS`:
-```python
-INSTALLED_APPS = [
-    # ...
-    "lang",
-    # ...
-]
-```
-3. Modify your project's base template `base.html` to include language's switcher styles:
-```html
-<head>
-    ...
-    <link rel="stylesheet" type="text/css" href="{% static 'lang/css/nav-link.css' %}">
-    ...
-</head>
-```
-4. Modify your project's nav template `nav.html` to include language's switcher:
-```html
-<ul class="nav navbar-nav">
-    {% include "lang/nav-link.html" %}
-</ul>
-```
-5. Modify your project's base template `base.html` to include language's templatetags `urls`:
-```html
-{% load i18n urls %}
-```
+    ```python
+    INSTALLED_APPS = [
+        # ...
+        "lang",
+        # ...
+    ]
+    ```
+3. Modify `settings.py` by adding the app to `INSTALLED_APPS`:
+    ``` python title="settings.py" hl_lines="12"
+    TEMPLATES = [
+        {
+            "BACKEND": "django.template.backends.django.DjangoTemplates",
+            "DIRS": [os.path.join(PROJECT_DIR, "templates")],
+            "APP_DIRS": True,
+            "OPTIONS": {
+                "context_processors": [
+                    "django.template.context_processors.debug",
+                    "django.template.context_processors.request",
+                    "django.contrib.auth.context_processors.auth",
+                    "django.contrib.messages.context_processors.messages",
+                    "lang.context_processors.from_settings",
+                ],
+            },
+        },
+    ]
+    ```
+4. Modify your project's base template `base.html` to include language's switcher styles:
+    ```html
+    <head>
+        ...
+        <link rel="stylesheet" type="text/css" href="{% static 'lang/css/nav-link.css' %}">
+        ...
+    </head>
+    ```
+5. Modify your project's nav template `nav.html` to include language's switcher:
+    ```html
+    <nav class="navbar">
+        ...
+        <ul class="nav navbar-nav">
+            {% include "nav-link.html" %}
+        </ul>
+        ...
+    </nav>
+    ```
 6. Modify your project's base template `base.html` to include attributes using `translate_url` template's tag:
-```html
-<head>
-    ...
-    <!-- hreflang -->
-    <meta name="language" content="{{ LANGUAGE_CODE }}" />
-    {% get_available_languages as LANGUAGES %}
-    {% for language_code, language_name in LANGUAGES %}
-    <link rel="alternate" hreflang="{{ language_code }}" href="{% translate_url language_code %}" />
-    {% endfor %}
-    <link rel="alternate" href="{% translate_url 'it' %}" hreflang="x-default" />
-    ...
-</head>
-```
+    ```html
+    <head>
+        ...
+        <meta name="language" content="{{ LANGUAGE_CODE }}" />
+        {% include "hreflang.html" %}
+        ...
+    </head>
+    ```
 
 ## Run Example Project
 
