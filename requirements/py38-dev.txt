@@ -481,9 +481,9 @@ pydantic-core==2.14.1 \
     --hash=sha256:fd937733bf2fe7d6a8bf208c12741f1f730b7bf5636033877767a75093c29b8a \
     --hash=sha256:ffba979801e3931a19cd30ed2049450820effe8f152aaa317e2fd93795d318d7
     # via pydantic
-pydantic-settings==2.0.3 \
-    --hash=sha256:962dc3672495aad6ae96a4390fac7e593591e144625e5112d359f8f67fb75945 \
-    --hash=sha256:ddd907b066622bd67603b75e2ff791875540dc485b7307c4fffc015719da8625
+pydantic-settings==2.1.0 \
+    --hash=sha256:26b1492e0a24755626ac5e6d715e9077ab7ad4fb5f19a8b7ed7011d52f36141c \
+    --hash=sha256:7621c0cb5d90d1140d2f0ef557bdf03573aac7035948109adf2574770b77605a
     # via bump-my-version
 pygments==2.16.1 \
     --hash=sha256:13fc09fa63bc8d8671a6d247e1eb303c4b343eaee81d861f3404db2935653692 \
@@ -605,9 +605,9 @@ tomli==2.0.1 \
     # via
     #   pytest
     #   tox
-tomlkit==0.12.2 \
-    --hash=sha256:df32fab589a81f0d7dc525a4267b6d7a64ee99619cbd1eeb0fae32c1dd426977 \
-    --hash=sha256:eeea7ac7563faeab0a1ed8fe12c2e5a51c61f933f2502f7e9db0241a65163ad0
+tomlkit==0.12.3 \
+    --hash=sha256:75baf5012d06501f07bee5bf8e801b9f343e7aac5a92581f20f80ce632e6b5a4 \
+    --hash=sha256:b0a645a9156dc7cb5d3a1f0d4bab66db287fcb8e0430bdd4664a095ea16414ba
     # via bump-my-version
 tox==3.28.0 \
     --hash=sha256:57b5ab7e8bb3074edc3c0c0b4b192a4f3799d3723b2c5b76f1fa9f2d40316eea \
