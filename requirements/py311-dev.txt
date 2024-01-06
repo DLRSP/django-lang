@@ -8,9 +8,9 @@ annotated-types==0.6.0 \
     --hash=sha256:0641064de18ba7a25dee8f96403ebc39113d0cb953a01429249d5c7564666a43 \
     --hash=sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d
     # via pydantic
-bump-my-version==0.15.4 \
-    --hash=sha256:94e498a04957839d75f63164c4c419836073f5846b0b8b141c18302f09cc219a \
-    --hash=sha256:a8b2aab492f5bbb45a132fa167c949b9f9555817a7e52c325717ff7c138efcef
+bump-my-version==0.16.0 \
+    --hash=sha256:04b8e93baf8a16ed08dab8b5787a35bb27eaf5c2826a3828589bede2bd0cf961 \
+    --hash=sha256:85004b195f1034fd2562dca9e21cffca95c86cdd18919a3f5b51259298e27b89
     # via -r requirements/dev.in
 certifi==2023.11.17 \
     --hash=sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1 \
@@ -589,9 +589,9 @@ rich==13.7.0 \
     #   bump-my-version
     #   rich-click
     #   twine
-rich-click==1.7.2 \
-    --hash=sha256:22f93439a3d65f4a04e07cd584f4d01d132d96899766af92ed287618156abbe2 \
-    --hash=sha256:a42bcdcb8696c4ca7a3b1a39e1aba3d2cb64ad00690b4c022fdcb2cbccebc3fc
+rich-click==1.7.3 \
+    --hash=sha256:bc4163d4e2a3361e21c4d72d300eca6eb8896dfc978667923cb1d4937b8769a3 \
+    --hash=sha256:bced1594c497dc007ab49508ff198bb437c576d01291c13a61658999066481f4
     # via bump-my-version
 secretstorage==3.3.3 \
     --hash=sha256:2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77 \
