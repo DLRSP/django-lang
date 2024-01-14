@@ -8,9 +8,9 @@ annotated-types==0.6.0 \
     --hash=sha256:0641064de18ba7a25dee8f96403ebc39113d0cb953a01429249d5c7564666a43 \
     --hash=sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d
     # via pydantic
-bump-my-version==0.16.1 \
-    --hash=sha256:571d294357db7f20299a2c59aa44a3ba498d92767e79f9a641565606c628803b \
-    --hash=sha256:a2ad09946c226db4465cbba4ae97f72b4f83484e7d0712fdef465623a83e7599
+bump-my-version==0.16.2 \
+    --hash=sha256:83820caf4f64465c674f41346a2135999d7c3359c35e42a67708cb957c5135be \
+    --hash=sha256:966dfc6cf9765a1d4a48fbaeb587a2e3a70ed5c13b04b5ee10c6e0134d4b8342
     # via -r requirements/dev.in
 certifi==2023.11.17 \
     --hash=sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1 \
@@ -259,9 +259,6 @@ docutils==0.20.1 \
     --hash=sha256:96f387a2c5562db4476f09f13bbab2192e764cac08ebbf3a34a95d9b1e4a59d6 \
     --hash=sha256:f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b
     # via readme-renderer
-dotted-notation==0.11.0 \
-    --hash=sha256:e1a214cb236cd647e56c79108e8eca2a50a635b7196077eab211869d9a93b0ed
-    # via bump-my-version
 exceptiongroup==1.2.0 \
     --hash=sha256:4bfd3996ac73b41e9b9628b04e079f193850720ea5945fc96a08633c66912f14 \
     --hash=sha256:91f5c769735f051a4290d52edd0858999b57e5876e9f85937691bd4c9fa3ed68
@@ -494,10 +491,6 @@ pygments==2.17.2 \
     # via
     #   readme-renderer
     #   rich
-pyparsing==3.1.1 \
-    --hash=sha256:32c7c0b711493c72ff18a981d24f28aaf9c1fb7ed5e9667c9e84e3db623bdbfb \
-    --hash=sha256:ede28a1a32462f5a9705e07aea48001a08f7cf81a021585011deba701581a0db
-    # via dotted-notation
 pytest==7.4.4 \
     --hash=sha256:2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280 \
     --hash=sha256:b090cdf5ed60bf4c45261be03239c2c1c22df034fbffe691abe93cd80cea01d8
