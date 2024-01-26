@@ -8,9 +8,9 @@ annotated-types==0.6.0 \
     --hash=sha256:0641064de18ba7a25dee8f96403ebc39113d0cb953a01429249d5c7564666a43 \
     --hash=sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d
     # via pydantic
-bump-my-version==0.17.0 \
-    --hash=sha256:4f2aacf22204b51f8045465c67a12236eaebe60775f209ac989f676ee46cca26 \
-    --hash=sha256:87db9379a61602875e0e9319010105c5e3b4e7e7359ede2f7180e6288fd188d0
+bump-my-version==0.17.1 \
+    --hash=sha256:03e03a5382eaa850a804a17808b0662508698294c07dd1ec529e708d0d5980df \
+    --hash=sha256:e044ac1471e2c6200b6c032b82e61d4e94d2ee0e1b7e0545968bac372f1993c8
     # via -r requirements/dev.in
 certifi==2023.11.17 \
     --hash=sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1 \
