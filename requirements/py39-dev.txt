@@ -8,9 +8,9 @@ annotated-types==0.6.0 \
     --hash=sha256:0641064de18ba7a25dee8f96403ebc39113d0cb953a01429249d5c7564666a43 \
     --hash=sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d
     # via pydantic
-bump-my-version==0.17.1 \
-    --hash=sha256:03e03a5382eaa850a804a17808b0662508698294c07dd1ec529e708d0d5980df \
-    --hash=sha256:e044ac1471e2c6200b6c032b82e61d4e94d2ee0e1b7e0545968bac372f1993c8
+bump-my-version==0.17.2 \
+    --hash=sha256:5ec8ddf39ca23e34d1233f237de403e3f2db3b115724aa28e41fb77c0cfc0089 \
+    --hash=sha256:d61a7c9297c5ca6f7044feb999d32151dec55fda08b1f6fe626dc8d95bd47783
     # via -r requirements/dev.in
 certifi==2023.11.17 \
     --hash=sha256:9b469f3a900bf28dc19b8cfbf8019bf47f7fdd1a65a1d4ffb98fc14166beb4d1 \
@@ -504,9 +504,9 @@ pygments==2.17.2 \
     # via
     #   readme-renderer
     #   rich
-pytest==7.4.4 \
-    --hash=sha256:2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280 \
-    --hash=sha256:b090cdf5ed60bf4c45261be03239c2c1c22df034fbffe691abe93cd80cea01d8
+pytest==8.0.0 \
+    --hash=sha256:249b1b0864530ba251b7438274c4d251c58d868edaaec8762893ad4a0d71c36c \
+    --hash=sha256:50fb9cbe836c3f20f0dfa99c565201fb75dc54c8d76373cd1bde06b06657bdb6
     # via
     #   -r requirements/dev.in
     #   pytest-django
