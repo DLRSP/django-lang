@@ -8,9 +8,9 @@ annotated-types==0.6.0 \
     --hash=sha256:0641064de18ba7a25dee8f96403ebc39113d0cb953a01429249d5c7564666a43 \
     --hash=sha256:563339e807e53ffd9c267e99fc6d9ea23eb8443c08f112651963e24e22f84a5d
     # via pydantic
-bump-my-version==0.17.3 \
-    --hash=sha256:ac643cf4b36cb925e78c2c48628fd30d3f99d0d30d3d954725214813dde7283c \
-    --hash=sha256:d07b33784922ad6acba19e31a62d0f56572e405430187bf9e7d9ab2d3e593921
+bump-my-version==0.17.4 \
+    --hash=sha256:14bd0bfe6d21e4f8731a6c424b320625214dedd541033b57b04ddc5c5b30d1f5 \
+    --hash=sha256:ae03746773e5bda00512eba90328894b7cbe57c8782cde97e886ea3ddfdf517b
     # via -r requirements/dev.in
 certifi==2024.2.2 \
     --hash=sha256:0569859f95fc761b18b45ef421b1290a0f65f147e92a1e5eb3e635f9a5e4e66f \
@@ -274,9 +274,9 @@ filelock==3.13.1 \
     # via
     #   tox
     #   virtualenv
-identify==2.5.33 \
-    --hash=sha256:161558f9fe4559e1557e1bff323e8631f6a0e4837f7497767c1782832f16b62d \
-    --hash=sha256:d40ce5fcd762817627670da8a7d8d8e65f24342d14539c59488dc603bf662e34
+identify==2.5.34 \
+    --hash=sha256:a4316013779e433d08b96e5eabb7f641e6c7942e4ab5d4c509ebd2e7a8994aed \
+    --hash=sha256:ee17bc9d499899bc9eaec1ac7bf2dc9eedd480db9d88b96d123d3b64a9d34f5d
     # via pre-commit
 idna==3.6 \
     --hash=sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca \
@@ -360,9 +360,9 @@ pluggy==1.4.0 \
     # via
     #   pytest
     #   tox
-pre-commit==3.6.0 \
-    --hash=sha256:c255039ef399049a5544b6ce13d135caba8f2c28c3b4033277a788f434308376 \
-    --hash=sha256:d30bad9abf165f7785c15a21a1f46da7d0677cb00ee7ff4c579fd38922efe15d
+pre-commit==3.6.1 \
+    --hash=sha256:9fe989afcf095d2c4796ce7c553cf28d4d4a9b9346de3cda079bcf40748454a4 \
+    --hash=sha256:c90961d8aa706f75d60935aba09469a6b0bcb8345f127c3fbee4bdc5f114cf4b
     # via -r requirements/dev.in
 prompt-toolkit==3.0.36 \
     --hash=sha256:3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63 \
