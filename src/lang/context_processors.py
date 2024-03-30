@@ -1,6 +1,7 @@
 """
 Context processors for django-lang app
 """
+
 from typing import Any, Dict
 
 from django.conf import settings
