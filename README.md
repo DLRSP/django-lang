@@ -58,7 +58,16 @@
         ...
     </head>
     ```
-5. Modify your project's nav template `nav.html` to include language's switcher:
+5. Modify your project's base template `base.html` to include attributes using `translate_url` template's tag:
+    ```html
+    <head>
+        ...
+        <meta name="language" content="{{ LANGUAGE_CODE }}" />
+        {% include "hreflang.html" %}
+        ...
+    </head>
+    ```
+6. Modify your project's nav template `nav.html` to include language's switcher:
     ```html
     <nav class="navbar">
         ...
@@ -68,15 +77,7 @@
         ...
     </nav>
     ```
-6. Modify your project's base template `base.html` to include attributes using `translate_url` template's tag:
-    ```html
-    <head>
-        ...
-        <meta name="language" content="{{ LANGUAGE_CODE }}" />
-        {% include "hreflang.html" %}
-        ...
-    </head>
-    ```
+
 
 ## Run Example Project
 
