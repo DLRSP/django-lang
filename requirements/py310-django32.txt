@@ -12,9 +12,9 @@ django==3.2.25 \
     --hash=sha256:7ca38a78654aee72378594d63e51636c04b8e28574f5505dff630895b5472777 \
     --hash=sha256:a52ea7fcf280b16f7b739cec38fa6d3f8953a5456986944c3ca97e79882b4e38
     # via -r requirements/requirements.in
-emoji-country-flag==2.0.0 \
-    --hash=sha256:fb5e60b315ad759458a601dc7f3f93a95fe0adfd19b423512191ecedc6742e52 \
-    --hash=sha256:ff887dccf17df055ecfe999401e11f037a76f9a1cd51fde98b0b791d64c1b860
+emoji-country-flag==2.0.1 \
+    --hash=sha256:0faa32ca4f12da4e4c8324431947077b116caf998b0df0c01168ae8ece24e57a \
+    --hash=sha256:5465745b20f33d1ea46a53126f23f5aea34d66b20c2571c7bbb6a63925e4d95a
     # via -r requirements/requirements.in
 pytz==2024.1 \
     --hash=sha256:2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812 \
