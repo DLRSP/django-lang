@@ -16,9 +16,9 @@ emoji-country-flag==2.1.0 \
     --hash=sha256:224b19583210901b950a624ab0b0896cdf0764b36f8bd1463868b15fb8c10f6a \
     --hash=sha256:3b4df6a9d9961ab7716090689c2e96405baff68e46849ab2704335d904589f2a
     # via -r requirements/requirements.in
-pytz==2025.2 \
-    --hash=sha256:360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3 \
-    --hash=sha256:5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00
+pytz==2026.1.post1 \
+    --hash=sha256:3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1 \
+    --hash=sha256:f2fd16142fda348286a75e1a524be810bb05d444e5a081f37f7affc635035f7a
     # via django
 sqlparse==0.5.5 \
     --hash=sha256:12a08b3bf3eec877c519589833aed092e2444e68240a3577e8e26148acc7b1ba \
