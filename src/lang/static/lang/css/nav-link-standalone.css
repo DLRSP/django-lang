@@ -1,0 +1,27 @@
+/*-----------------------------------------------------------------------------------*/
+/* Mobile / narrow navbar (< lg): language switch beside hamburger; hide duplicate    */
+/* in the collapsed drawer. (display-standalone-class.js is optional; not required.) */
+/*-----------------------------------------------------------------------------------*/
+
+.lang-switcher-standalone {
+    display: none !important;
+}
+
+@media (max-width: 991.98px) {
+    .lang-switcher-standalone {
+        display: flex !important;
+        align-items: center;
+        margin-right: 6px;
+    }
+
+    #language-switcher-standalone select {
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 2px 0 0;
+    }
+
+    .navbar-collapse #language-switcher {
+        display: none !important;
+    }
+}

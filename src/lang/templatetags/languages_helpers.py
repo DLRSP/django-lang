@@ -3,7 +3,15 @@ from django import template
 from django.conf import settings
 from django.utils import translation
 
+from lang.utils import build_language_flag_map, get_hreflang_code
+
 register = template.Library()
+
+
+@register.filter
+def hreflang_bcp47(django_language_code: str) -> str:
+    """Map Django language code to hreflang (BCP 47); see :mod:`lang.conf`."""
+    return get_hreflang_code(django_language_code)
 
 
 @register.filter
@@ -44,9 +52,7 @@ def get_language_info_list_ex(request):
         else:
             return translation.get_language_info(str(language))
 
-    flag_map = {
-        "en": "gb",
-    }
+    flag_map = build_language_flag_map()
 
     # Es: 'es'
     current_language = translation.get_language()

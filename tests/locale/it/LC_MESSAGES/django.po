@@ -1,0 +1,7 @@
+# Test catalog: translated URL path segments (gettext_lazy in tests.urls).
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "item/<slug:slug>/"
+msgstr "oggetto/<slug:slug>/"

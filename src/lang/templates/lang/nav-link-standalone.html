@@ -1,0 +1,6 @@
+{# Beside the mobile menu toggle when (display-mode: standalone) or iOS web app. #}
+{# Use with nav-link-standalone.css + display-standalone-class.js #}
+{% load i18n %}
+<div class="lang-switcher-standalone">
+    {% include "lang/nav-link.html" with lang_switcher_id="language-switcher-standalone" %}
+</div>

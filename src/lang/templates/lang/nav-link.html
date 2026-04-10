@@ -1,17 +1,13 @@
 {% load i18n languages_helpers %}
-
-<div id="language-switcher" class="nav-link">
+<div id="{{ lang_switcher_id|default:'language-switcher' }}" class="nav-link{% if lang_switcher_extra_class %} {{ lang_switcher_extra_class }}{% endif %}">
     <form action="{% url 'set_language' %}" method="post">
         {% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}" />
-        <select name="language" onchange="this.form.submit()" aria-label="Language">
+        <select name="language" onchange="this.form.submit()" aria-label="{% translate 'Language' %}">
             {% for language in request|get_language_info_list_ex %}
-            <li class="nav-item">
-                <option value="{{ language.code }}" {% if language.is_current %} selected="selected"{% endif %}>
+                <option value="{{ language.code }}"{% if language.is_current %} selected="selected"{% endif %}>
                     <span class="flag">{{ language.flag }}</span>
-                    {# {{ language.code }} #}
                 </option>
-            </li>
             {% endfor %}
         </select>
     </form>

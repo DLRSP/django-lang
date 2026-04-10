@@ -1,5 +1,6 @@
-/* Menu Language */
-#language-switcher select {
+/* Menu Language (in-drawer + optional standalone bar id language-switcher-standalone) */
+#language-switcher select,
+#language-switcher-standalone select {
     width: auto;
     background-color: transparent;
     font-size: 28px;

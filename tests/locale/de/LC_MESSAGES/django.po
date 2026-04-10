@@ -1,0 +1,7 @@
+# German uses same English URL segment as msgid when not translated (optional).
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "item/<slug:slug>/"
+msgstr "artikel/<slug:slug>/"
