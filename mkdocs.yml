@@ -1,42 +1,36 @@
 site_name: django-lang
 site_url: https://github.com/DLRSP/django-lang/
-site_description: Django application templates repository.
+site_description: Reusable i18n helpers, hreflang, language switcher, and optional set_language middleware for Django.
 
 repo_name: DLRSP/django-lang
 repo_url: https://github.com/DLRSP/django-lang/
 
 theme:
-    name: 'material'
-    palette:
-#      - primary: 'black'
-#      - accent: 'indigo'
-      - scheme: default
-        toggle:
-          icon: material/weather-sunny
-          name: Switch to dark mode
-      - scheme: slate #
-        toggle:
-          icon: material/weather-night
-          name: Switch to light mode
-    features:
-      - navigation.instant
-      - navigation.top
-      - content.code.annotate
-      - content.tabs.link
-      - search.suggest
-      - search.highlight
-    icon:
-        repo: fontawesome/brands/github-alt
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.top
+    - content.code.annotate
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github-alt
 
 plugins:
   - search
   - git-revision-date
-#  - tags
 
 extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXX
   social:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/DlrspTwits
@@ -47,25 +41,24 @@ extra:
       link: https://github.com/DLRSP
 
 markdown_extensions:
- - toc:
-    anchorlink: True
- - pymdownx.tabbed:
-    alternate_style: true
- - pymdownx.highlight:
- - pymdownx.inlinehilite:
- - pymdownx.superfences:
- - pymdownx.snippets:
+  - toc:
+      anchorlink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+  - pymdownx.inlinehilite:
+  - pymdownx.superfences:
+  - pymdownx.snippets:
 
 nav:
- - Quickstart: 'index.md'
- - Tutorials:
-    - 'Example': 'tutorial/example.md'
-    - 'Customize':
-      - 'Templates': 'tutorial/templates.md'
-      - 'Images': 'tutorial/images.md'
- - Community:
-    - 'References': 'community/references.md'
-    - 'Contributing': 'community/contributing.md'
-    - 'Third-Party-Packages': 'community/third-party-packages.md'
+  - Home: index.md
+  - Tutorials:
+      - Installation & setup: tutorial/installation.md
+      - Configuration (APP_CONFIG): tutorial/configuration.md
+      - Templates & nav: tutorial/templates.md
+      - Set language middleware: tutorial/set_language_middleware.md
+  - Community:
+      - Contributing: community/contributing.md
+      - References: community/references.md
 
 copyright: Copyright &copy; 2010-present DLRSP

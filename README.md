@@ -54,6 +54,10 @@
 
     Optional: ``lang.context_processors.language_switcher_next`` (fills ``redirect_to`` for the packaged language form).
 
+### Optional: ``SetLanguageNextPathMiddleware``
+
+Only needed if you use **translated URL segments** (``gettext_lazy`` under ``i18n_patterns``) and see language switches that POST to ``set_language`` but stay on the wrong prefix. Short how-to: [docs/set_language_middleware.md](docs/set_language_middleware.md).
+
 4. Modify your project's base template `base.html` to include language's switcher styles:
     ```html
     <head>
