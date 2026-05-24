@@ -16,7 +16,6 @@ requires-python = ">=3.8"
 dynamic = ["version"]
 readme = "README.md"
 license = "MIT"
-license-files = ["LICENSE"]
 keywords = ["django", "i18n", "multilingual", "hreflang", "language"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
