@@ -1,5 +1,9 @@
 [build-system]
-requires = ["setuptools >= 77", "wheel"]
+requires = [
+  "setuptools >= 77; python_version >= '3.9'",
+  "setuptools >= 40.8.0; python_version < '3.9'",
+  "wheel",
+]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -20,6 +24,7 @@ classifiers = [
     "Framework :: Django",
     "Framework :: Django :: 3.2",
     "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
@@ -29,6 +34,9 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
