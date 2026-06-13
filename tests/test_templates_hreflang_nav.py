@@ -9,7 +9,6 @@ from django.test import TestCase
 from django.urls import reverse
 
 from lang.utils import get_hreflang_code
-
 from tests.hreflang_html import parse_alternate_links
 
 
@@ -81,7 +80,9 @@ class HreflangAlternateLinkOutputTests(TestCase):
         for code, _ in settings.LANGUAGES:
             self.assertIn(get_hreflang_code(code), hreflangs)
         self.assertIn("x-default", hreflangs)
-        self.assertEqual(len(hreflangs), len(set(hreflangs)), "duplicate hreflang value")
+        self.assertEqual(
+            len(hreflangs), len(set(hreflangs)), "duplicate hreflang value"
+        )
 
     def test_x_default_href_targets_default_language_url(self):
         """Packaged demo sets DEFAULT_LANGUAGE_CODE to Italian for x-default."""

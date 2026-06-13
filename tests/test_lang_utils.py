@@ -26,9 +26,7 @@ class GetHreflangCodeTests(TestCase):
 class HreflangBcp47TemplateFilterTests(TestCase):
     def test_hreflang_bcp47_filter_in_template(self):
         with override_settings(LANGUAGE_HREFLANG_MAP={"pt": "pt-BR"}):
-            tpl = Template(
-                "{% load languages_helpers %}{{ code|hreflang_bcp47 }}"
-            )
+            tpl = Template("{% load languages_helpers %}{{ code|hreflang_bcp47 }}")
             out = tpl.render(Context({"code": "pt"}))
             self.assertEqual(out, "pt-BR")
 

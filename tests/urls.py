@@ -11,6 +11,7 @@ urlpatterns = [
     path("i18n/setlang/", set_language, name="set_language"),
 ]
 
+
 def _object_detail_dispatch(request, slug):
     """Resolve ``views.object_detail`` at call time so tests can patch it with ``wraps``."""
     return views.object_detail(request, slug)

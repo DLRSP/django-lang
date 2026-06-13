@@ -11,9 +11,9 @@ Related: translated URL segments — ``test_i18n_translated_url_paths.py``;
 query string / jsi18n — ``test_site_integration.py``.
 """
 
-import pytest
 from unittest.mock import patch
 
+import pytest
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.template import RequestContext, Template
 from django.test import RequestFactory, TestCase
@@ -25,7 +25,9 @@ from tests import views
 
 
 class TranslateUrlTagTests(TestCase):
-    def _render_translate_url(self, path, target_lang, activate_lang=None, **client_get_kw):
+    def _render_translate_url(
+        self, path, target_lang, activate_lang=None, **client_get_kw
+    ):
         if activate_lang:
             translation.activate(activate_lang)
         try:

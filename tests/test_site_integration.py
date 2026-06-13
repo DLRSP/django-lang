@@ -17,7 +17,6 @@ from django.urls import reverse
 from django.utils import translation
 
 from lang.utils import get_hreflang_code
-
 from tests.hreflang_html import parse_alternate_links
 
 
@@ -34,7 +33,10 @@ class HreflangContextProcessorIntegrationTests(TestCase):
         pairs = parse_alternate_links(content)
         self.assertEqual(len(pairs), len(settings.LANGUAGES) + 1)
         hreflangs = {h for h, _ in pairs}
-        self.assertEqual(hreflangs, {get_hreflang_code(c) for c, _ in settings.LANGUAGES} | {"x-default"})
+        self.assertEqual(
+            hreflangs,
+            {get_hreflang_code(c) for c, _ in settings.LANGUAGES} | {"x-default"},
+        )
         x_default_url = next(url for hl, url in pairs if hl == "x-default")
         self.assertTrue(x_default_url.startswith("http"))
         self.assertIn("/it/demo/hreflang-context/", x_default_url)

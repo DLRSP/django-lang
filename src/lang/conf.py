@@ -21,14 +21,14 @@ Projects can rely on defaults only (no imports from ``lang.defaults`` in
 
 from __future__ import annotations
 
-from typing import Any, Dict, Optional
+from typing import Any
 
 from django.conf import settings
 
 from lang import defaults
 
 
-def _app_config_lang() -> Dict[str, Any]:
+def _app_config_lang() -> dict[str, Any]:
     cfg = getattr(settings, "APP_CONFIG", None) or {}
     lang = cfg.get("lang")
     return dict(lang) if lang else {}
@@ -36,8 +36,8 @@ def _app_config_lang() -> Dict[str, Any]:
 
 def _merged_lang_dict(
     setting_name: str,
-    defaults_dict: Dict[str, str],
-) -> Dict[str, str]:
+    defaults_dict: dict[str, str],
+) -> dict[str, str]:
     """
     Full replacement if ``settings.<name>`` is set; else defaults merged with
     ``APP_CONFIG['lang'][<name>]`` (partial).
@@ -51,7 +51,7 @@ def _merged_lang_dict(
     return dict(defaults_dict)
 
 
-def get_language_hreflang_map() -> Dict[str, str]:
+def get_language_hreflang_map() -> dict[str, str]:
     """Django language code → BCP 47 ``hreflang`` attribute value."""
     return _merged_lang_dict(
         "LANGUAGE_HREFLANG_MAP",
@@ -59,7 +59,7 @@ def get_language_hreflang_map() -> Dict[str, str]:
     )
 
 
-def get_language_wikipedia_sameas() -> Dict[str, str]:
+def get_language_wikipedia_sameas() -> dict[str, str]:
     """Django language code → Wikipedia URL (e.g. JSON-LD ``sameAs``)."""
     return _merged_lang_dict(
         "LANGUAGE_WIKIPEDIA_SAMEAS",
@@ -67,7 +67,7 @@ def get_language_wikipedia_sameas() -> Dict[str, str]:
     )
 
 
-def get_og_locale_by_language() -> Dict[str, str]:
+def get_og_locale_by_language() -> dict[str, str]:
     """Django language code → Open Graph locale string."""
     return _merged_lang_dict(
         "OG_LOCALE_BY_LANGUAGE",
@@ -75,7 +75,7 @@ def get_og_locale_by_language() -> Dict[str, str]:
     )
 
 
-def get_hreflang_default_language() -> Optional[str]:
+def get_hreflang_default_language() -> str | None:
     """
     Brand default for ``hreflang`` ``x-default`` (non-empty string or ``None``).
 
@@ -91,7 +91,7 @@ def get_hreflang_default_language() -> Optional[str]:
     return None
 
 
-def get_language_flag_map() -> Dict[str, str]:
+def get_language_flag_map() -> dict[str, str]:
     """
     ISO region codes for emoji flags: merge package defaults with
     ``settings.LANGUAGE_FLAG_MAP`` and ``APP_CONFIG['lang']['LANGUAGE_FLAG_MAP']``.

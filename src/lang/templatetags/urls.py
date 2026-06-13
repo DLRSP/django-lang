@@ -1,6 +1,6 @@
 import logging
 from typing import Any, Dict, Optional
-from urllib.parse import urlsplit, unquote, urlunsplit
+from urllib.parse import unquote, urlsplit, urlunsplit
 
 from django import template, urls
 from django.urls import Resolver404, resolve, reverse

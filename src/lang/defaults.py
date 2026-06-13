@@ -12,16 +12,14 @@ Runtime resolution (settings + optional ``APP_CONFIG``) lives in
 
 from __future__ import annotations
 
-from typing import Dict
-
 # Google-style BCP 47 in <link hreflang="…"> (Django code → attribute value).
-LANGUAGE_HREFLANG_MAP: Dict[str, str] = {
+LANGUAGE_HREFLANG_MAP: dict[str, str] = {
     "zh-hans": "zh-Hans",
     "zh-hant": "zh-Hant",
 }
 
 # JSON-LD ``sameAs`` (or similar) → Wikipedia articles per language.
-LANGUAGE_WIKIPEDIA_SAMEAS: Dict[str, str] = {
+LANGUAGE_WIKIPEDIA_SAMEAS: dict[str, str] = {
     "it": "https://en.wikipedia.org/wiki/Italian_language",
     "en": "https://en.wikipedia.org/wiki/English_language",
     "de": "https://en.wikipedia.org/wiki/German_language",
@@ -38,7 +36,7 @@ LANGUAGE_WIKIPEDIA_SAMEAS: Dict[str, str] = {
 }
 
 # Open Graph ``og:locale``-style strings (underscore + region).
-OG_LOCALE_BY_LANGUAGE: Dict[str, str] = {
+OG_LOCALE_BY_LANGUAGE: dict[str, str] = {
     "it": "it_IT",
     "en": "en_US",
     "de": "de_DE",
