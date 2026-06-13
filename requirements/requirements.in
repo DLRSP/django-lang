@@ -1,2 +1,3 @@
 django
 emoji-country-flag
+tzdata; sys_platform == "win32"
