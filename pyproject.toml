@@ -18,6 +18,8 @@ license-files = ["LICENSE"]
 keywords = ["django", "i18n", "multilingual", "hreflang", "language"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
+    "Natural Language :: Italian",
+    "Natural Language :: English",
     "Environment :: Web Environment",
     "Framework :: Django",
     "Framework :: Django :: 3.2",
@@ -48,6 +50,10 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/DLRSP/django-lang"
+Documentation = "https://github.com/DLRSP/django-lang/"
+Repository = "https://github.com/DLRSP/django-lang"
+Issues = "https://github.com/DLRSP/django-lang/issues"
+Changelog = "https://github.com/DLRSP/django-lang/blob/main/CHANGELOG.rst"
 
 [project.optional-dependencies]
 testing = [
@@ -98,7 +104,6 @@ ignore = [
     "docs/community/third-party-packages.md",
     "docs/tutorial/customize.md",
 ]
-["AGENTS.md"]
 
 # Read by flake8 when flake8-pyproject is installed (extra `linting`).
 [tool.flake8]
