@@ -45,7 +45,6 @@ repos:
   hooks:
   - id: check-manifest
     args: [--no-build-isolation]
-    # --no-build-isolation: venv must include PEP 517 build deps from pyproject.toml
     additional_dependencies:
       - Django>=3.2
       - build

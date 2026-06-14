@@ -1,8 +1,8 @@
 [build-system]
 requires = [
-  "setuptools >= 77; python_version >= '3.9'",
-  "setuptools >= 40.8.0; python_version < '3.9'",
-  "wheel",
+    "setuptools >= 77; python_version >= '3.9'",
+    "setuptools >= 40.8.0; python_version < '3.9'",
+    "wheel",
 ]
 build-backend = "setuptools.build_meta"
 
@@ -13,10 +13,18 @@ authors = [
     { name = "DLRSP", email = "dlrsp.dev@gmail.com" },
 ]
 requires-python = ">=3.8"
-dynamic = ["version"]
+dynamic = [
+    "version",
+]
 readme = "README.md"
 license = "MIT"
-keywords = ["django", "i18n", "multilingual", "hreflang", "language"]
+keywords = [
+    "django",
+    "i18n",
+    "multilingual",
+    "hreflang",
+    "language",
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
@@ -75,30 +83,50 @@ linting = [
 ]
 
 [tool.setuptools]
-package-dir = { "" = "src" }
 include-package-data = true
 zip-safe = false
 
-[tool.setuptools.dynamic]
-version = { attr = "lang.__version__" }
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.dynamic.version]
+attr = "lang.__version__"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = [
+    "src",
+]
 
 [tool.distutils.bdist_wheel]
 universal = false
 
 [tool.black]
-target-version = ['py311']
+line-length = 80
+target-version = [
+    "py311",
+]
 
 [tool.isort]
 profile = "black"
 
-# Read by flake8 when Flake8-pyproject is installed (extra `linting`).
 [tool.flake8]
 max-line-length = 80
-select = ["E", "F", "W", "B", "B950", "C", "I", "TYP"]
-ignore = ["E203", "E501", "W503", "B950"]
+select = [
+    "E",
+    "F",
+    "W",
+    "B",
+    "B950",
+    "C",
+    "I",
+    "TYP",
+]
+ignore = [
+    "E203",
+    "E501",
+    "W503",
+    "B950",
+]
 per-file-ignores = [
     "**/migrations/*:B950",
 ]
@@ -113,36 +141,37 @@ no_implicit_optional = true
 show_error_codes = true
 warn_unreachable = true
 warn_unused_ignores = true
-
-[[tool.mypy.overrides]]
-module = "tests.*"
-allow_untyped_defs = true
+overrides = [
+    { module = "tests.*", allow_untyped_defs = true },
+]
 
 [tool.pytest.ini_options]
-addopts = """\
-    --strict-config
-    --strict-markers
-    --ds=tests.settings
-    """
+addopts = "--strict-config\n    --strict-markers\n    --ds=tests.settings\n    "
 django_find_project = false
-pythonpath = ["src"]
+pythonpath = [
+    "src",
+]
 
 [tool.coverage.paths]
-source = ["src", ".tox/*/site-packages"]
+source = [
+    "src",
+    ".tox/*/site-packages",
+]
 
 [tool.coverage.run]
 branch = true
-source = ["lang"]
+source = [
+    "lang",
+]
 
 [tool.coverage.report]
 show_missing = true
 
-# bump-my-version
 [tool.bumpversion]
 current_version = "0.6.2"
 commit = true
 tag = true
 allow_dirty = true
-
-[[tool.bumpversion.files]]
-filename = "./src/lang/__init__.py"
+files = [
+    { filename = "./src/lang/__init__.py" },
+]
