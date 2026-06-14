@@ -15,8 +15,7 @@ from lang.conf import (
 
 def from_settings(request) -> Dict[str, Any]:
     return {
-        "DEFAULT_LANGUAGE_CODE": getattr(settings, attr, None)
-        for attr in ("LANGUAGE_CODE",)
+        "DEFAULT_LANGUAGE_CODE": getattr(settings, "LANGUAGE_CODE", None),
     }
 
 

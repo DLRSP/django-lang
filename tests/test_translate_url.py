@@ -144,8 +144,8 @@ class TranslateUrlSessionReentryTests(TestCase):
         SessionMiddleware(lambda r: None).process_request(request)
         request.session.save()
         seeded = "http://testserver/seeded-de-only/"
-        setattr(request.session, "translated_iter_de", 1)
-        setattr(request.session, "translated_url_de", seeded)
+        request.session["translated_iter_de"] = 1
+        request.session["translated_url_de"] = seeded
         translation.activate("it")
         try:
             with patch.object(views, "object_detail", wraps=views.object_detail) as spy:
