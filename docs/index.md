@@ -6,7 +6,7 @@ Helpers for multilingual Django sites: **hreflang** links, a packaged **language
 
 ## Requirements
 
-- Python 3.8+
+- Python 3.9+
 - Django 3.2+ (see package metadata on PyPI for tested releases)
 
 ---
