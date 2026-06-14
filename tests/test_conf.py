@@ -43,7 +43,9 @@ class ConfTestCase(TestCase):
     def test_app_config_partial_merges_onto_defaults(self):
         m = get_language_hreflang_map()
         self.assertEqual(m["en"], "en-GB")
-        self.assertEqual(m["zh-hans"], defaults.LANGUAGE_HREFLANG_MAP["zh-hans"])
+        self.assertEqual(
+            m["zh-hans"], defaults.LANGUAGE_HREFLANG_MAP["zh-hans"]
+        )
 
     @override_settings(LANGUAGE_HREFLANG_MAP={"de": "de-DE"})
     def test_top_level_setting_replaces_hreflang_map_entirely(self):

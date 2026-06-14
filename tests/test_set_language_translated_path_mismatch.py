@@ -34,7 +34,9 @@ def _middleware_without_next_path() -> tuple[str, ...]:
 class DjangoTranslateUrlActiveLanguageMismatchTests(TestCase):
     """Documents ``django.urls.translate_url`` dependency on ``translation.get_language()``."""
 
-    def test_translate_url_noop_when_active_language_mismatches_url_prefix(self):
+    def test_translate_url_noop_when_active_language_mismatches_url_prefix(
+        self,
+    ):
         """With ``en`` active, Italian translated segment path does not resolve."""
         url = "/it/oggetto/shared-mismatch/"
         translation.activate("en")

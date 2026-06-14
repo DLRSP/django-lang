@@ -6,7 +6,11 @@ Out of scope: template rendering, translate_url, hreflang markup.
 
 from django.test import TestCase, override_settings
 
-from lang.context_processors import from_settings, language_switcher_next, seo_i18n
+from lang.context_processors import (
+    from_settings,
+    language_switcher_next,
+    seo_i18n,
+)
 
 
 class ContextProcessorTests(TestCase):
@@ -37,10 +41,15 @@ class ContextProcessorTests(TestCase):
 
     @override_settings(HREFLANG_DEFAULT_LANGUAGE="")
     def test_seo_i18n_skips_default_language_when_hreflang_setting_empty(self):
-        from lang.defaults import LANGUAGE_WIKIPEDIA_SAMEAS, OG_LOCALE_BY_LANGUAGE
+        from lang.defaults import (
+            LANGUAGE_WIKIPEDIA_SAMEAS,
+            OG_LOCALE_BY_LANGUAGE,
+        )
 
         request = self.client.get("/en/").wsgi_request
         ctx = seo_i18n(request)
         self.assertNotIn("DEFAULT_LANGUAGE_CODE", ctx)
-        self.assertEqual(ctx["LANGUAGE_WIKIPEDIA_SAMEAS"], LANGUAGE_WIKIPEDIA_SAMEAS)
+        self.assertEqual(
+            ctx["LANGUAGE_WIKIPEDIA_SAMEAS"], LANGUAGE_WIKIPEDIA_SAMEAS
+        )
         self.assertEqual(ctx["OG_LOCALE_BY_LANGUAGE"], OG_LOCALE_BY_LANGUAGE)

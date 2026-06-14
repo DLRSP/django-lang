@@ -77,21 +77,23 @@ class TranslateUrlTagTests(TestCase):
 
     def test_session_cache_isolated_per_target_language(self):
         """Each target language has its own ``translated_url_*`` session slot."""
-        with patch.object(views, "object_detail", wraps=views.object_detail) as spy:
+        with patch.object(
+            views, "object_detail", wraps=views.object_detail
+        ) as spy:
             response = self.client.get("/it/object/cache-by-lang/")
             self.assertEqual(spy.call_count, 1)
             request = response.wsgi_request
             translation.activate("it")
             try:
-                de_out = Template("{% load urls %}{% translate_url 'de' %}").render(
-                    RequestContext(request, {})
-                )
-                fr_out = Template("{% load urls %}{% translate_url 'fr' %}").render(
-                    RequestContext(request, {})
-                )
-                de_again = Template("{% load urls %}{% translate_url 'de' %}").render(
-                    RequestContext(request, {})
-                )
+                de_out = Template(
+                    "{% load urls %}{% translate_url 'de' %}"
+                ).render(RequestContext(request, {}))
+                fr_out = Template(
+                    "{% load urls %}{% translate_url 'fr' %}"
+                ).render(RequestContext(request, {}))
+                de_again = Template(
+                    "{% load urls %}{% translate_url 'de' %}"
+                ).render(RequestContext(request, {}))
             finally:
                 translation.deactivate()
         self.assertIn("/de/object/cache-by-lang/", de_out)
@@ -148,10 +150,12 @@ class TranslateUrlSessionReentryTests(TestCase):
         request.session["translated_url_de"] = seeded
         translation.activate("it")
         try:
-            with patch.object(views, "object_detail", wraps=views.object_detail) as spy:
-                out = Template("{% load urls %}{% translate_url 'de' %}").render(
-                    RequestContext(request, {})
-                )
+            with patch.object(
+                views, "object_detail", wraps=views.object_detail
+            ) as spy:
+                out = Template(
+                    "{% load urls %}{% translate_url 'de' %}"
+                ).render(RequestContext(request, {}))
         finally:
             translation.deactivate()
         self.assertEqual(out, seeded)
@@ -178,9 +182,9 @@ class TranslateUrlReverseFailureTests(TestCase):
                 "reverse",
                 side_effect=RuntimeError("reverse unavailable"),
             ):
-                out = Template("{% load urls %}{% translate_url 'de' %}").render(
-                    RequestContext(request, {})
-                )
+                out = Template(
+                    "{% load urls %}{% translate_url 'de' %}"
+                ).render(RequestContext(request, {}))
         finally:
             translation.deactivate()
         self.assertEqual(out, expected)
@@ -215,7 +219,9 @@ class TranslateUrlCurrentBehaviorTests(TestCase):
     """
 
     def test_translate_url_re_invokes_resolved_view_once(self):
-        with patch.object(views, "object_detail", wraps=views.object_detail) as spy:
+        with patch.object(
+            views, "object_detail", wraps=views.object_detail
+        ) as spy:
             response = self.client.get("/it/object/slug-baseline/")
             self.assertEqual(spy.call_count, 1)
             translation.activate("it")
@@ -246,7 +252,9 @@ class TranslateUrlPlannedBehaviorTests(TestCase):
         strict=False,
     )
     def test_translate_url_does_not_call_object_detail_again(self):
-        with patch.object(views, "object_detail", wraps=views.object_detail) as spy:
+        with patch.object(
+            views, "object_detail", wraps=views.object_detail
+        ) as spy:
             response = self.client.get("/it/object/slug-a/")
             self.assertEqual(spy.call_count, 1)
             request = response.wsgi_request

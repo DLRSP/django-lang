@@ -23,7 +23,9 @@ def get_hreflang_code(django_language_code: str) -> str:
     """Return the hreflang attribute value for a Django ``LANGUAGE_CODE``."""
     from lang.conf import get_language_hreflang_map
 
-    return get_language_hreflang_map().get(django_language_code, django_language_code)
+    return get_language_hreflang_map().get(
+        django_language_code, django_language_code
+    )
 
 
 def build_language_flag_map() -> dict[str, str]:

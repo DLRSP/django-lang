@@ -35,7 +35,8 @@ class HreflangContextProcessorIntegrationTests(TestCase):
         hreflangs = {h for h, _ in pairs}
         self.assertEqual(
             hreflangs,
-            {get_hreflang_code(c) for c, _ in settings.LANGUAGES} | {"x-default"},
+            {get_hreflang_code(c) for c, _ in settings.LANGUAGES}
+            | {"x-default"},
         )
         x_default_url = next(url for hl, url in pairs if hl == "x-default")
         self.assertTrue(x_default_url.startswith("http"))

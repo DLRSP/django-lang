@@ -63,14 +63,20 @@ def translate_url(context: Dict[str, Any], language: Optional[str]) -> str:
                             parsed.scheme,
                             parsed.netloc,
                             reverse(
-                                match.url_name, args=match.args, kwargs=match.kwargs
+                                match.url_name,
+                                args=match.args,
+                                kwargs=match.kwargs,
                             ),
                             parsed.query,
                             parsed.fragment,
                         )
                     )
                     translated_url = urls.translate_url(view_url, language)
-                setattr(request.session, f"translated_url_{language}", translated_url)
+                setattr(
+                    request.session,
+                    f"translated_url_{language}",
+                    translated_url,
+                )
                 return translated_url
             except Exception as err:
                 logger.debug(f"Translate url exception: [{err}]")
