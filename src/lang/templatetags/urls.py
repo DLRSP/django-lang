@@ -22,21 +22,21 @@ def translate_url(context: Dict[str, Any], language: Optional[str]) -> str:
         {% translate_url 'en' %}
     """
     request = context["request"]
+    iter_key = f"translated_iter_{language}"
+    url_key = f"translated_url_{language}"
+    session = request.session
 
     # set session's iteration to avoid circular calls
     try:
-        if hasattr(request.session, f"translated_iter_{language}"):
-            if getattr(request.session, f"translated_iter_{language}") > 0:
-                return getattr(request.session, f"translated_url_{language}")
-        setattr(request.session, f"translated_iter_{language}", 1)
+        if session.get(iter_key, 0) > 0:
+            return session[url_key]
+        session[iter_key] = 1
     except Exception as err:
         raise Exception(f"Avoid circular execution! [{err}]")
 
-    if hasattr(request.session, f"translated_url_{language}"):
-        logger.debug(
-            f"session has translated_url_{language}: {getattr(request.session, f'translated_url_{language}')}"
-        )
-        return getattr(request.session, f"translated_url_{language}")
+    if url_key in session:
+        logger.debug("session has %s: %s", url_key, session[url_key])
+        return session[url_key]
     url = request.build_absolute_uri()
     try:
         parsed = urlsplit(url)
@@ -72,16 +72,12 @@ def translate_url(context: Dict[str, Any], language: Optional[str]) -> str:
                         )
                     )
                     translated_url = urls.translate_url(view_url, language)
-                setattr(
-                    request.session,
-                    f"translated_url_{language}",
-                    translated_url,
-                )
+                session[url_key] = translated_url
                 return translated_url
             except Exception as err:
                 logger.debug(f"Translate url exception: [{err}]")
                 pass
 
     translated_url = urls.translate_url(url, language)
-    setattr(request.session, f"translated_url_{language}", translated_url)
+    session[url_key] = translated_url
     return translated_url
