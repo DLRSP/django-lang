@@ -92,7 +92,6 @@ where = ["src"]
 
 [tool.setuptools.data-files]
 "share/django-lang/requirements" = [
-  "requirements/py310-django32.txt",
   "requirements/py310-django42.txt",
   "requirements/py310-django52.txt",
   "requirements/py311-django42.txt",
