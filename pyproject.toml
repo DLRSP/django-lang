@@ -161,7 +161,7 @@ show_missing = true
 
 # bump-my-version
 [tool.bumpversion]
-current_version = "0.6.6"
+current_version = "0.6.7"
 commit = true
 tag = true
 allow_dirty = true
